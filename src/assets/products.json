@@ -1,0 +1,30 @@
+[
+    {
+        "Name": "Polo TShirt",
+        "Type": "Short Sleeve",
+        "AvailableSizes": ["xs", "s", "m", "l"],
+        "ImageLink": "../images/polotshirt.jpg",
+        "Description": "adfhsladfh aldkfhaei adnflakdfj"
+    },
+    {
+        "Name": "Polo TShirt",
+        "Type": "Short Sleeve",
+        "AvailableSizes": ["xs", "s", "m", "l"],
+        "ImageLink": "../images/polotshirt.jpg",
+        "Description": "adfhsladfh aldkfhaei adnflakdfj"
+    },
+    {
+        "Name": "Polo TShirt",
+        "Type": "Short Sleeve",
+        "AvailableSizes": ["xs", "s", "m", "l"],
+        "ImageLink": "../images/polotshirt.jpg",
+        "Description": "adfhsladfh aldkfhaei adnflakdfj"
+    },
+    {
+        "Name": "Polo TShirt",
+        "Type": "Short Sleeve",
+        "AvailableSizes": ["xs", "s", "m", "l"],
+        "ImageLink": "../images/polotshirt.jpg",
+        "Description": "adfhsladfh aldkfhaei adnflakdfj"
+    }
+]

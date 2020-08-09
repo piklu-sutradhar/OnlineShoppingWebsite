@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { Card, Button } from "react-bootstrap";
-import image from '../images/polotshirt.jpg'
+//import imageFolder from 'images/'
 
-class ProductCard extends Component {
+class ProductCard extends Component { 
     render() {
+        //var image = `images/${this.props.product.ImageLink}`;
         return (
-                <Card style={{ width: '4em' }}>
-                    <Card.Img variant="top" src={image} />
+                <Card className="shadow-box-example hoverable" style={{ width: '4em' }}>
+                    
+                    <Card.Img variant="top" src={require('../images/polotshirt.jpg')} />
                     <Card.Body>
                         <Card.Title>{this.props.product.Name}</Card.Title>
                         <Card.Text>
                             Price: $CAD 35
-                    </Card.Text>
+                        </Card.Text>
                         <Card.Text>
                             {this.props.product.Description}
                         </Card.Text>

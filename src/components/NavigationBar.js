@@ -9,8 +9,8 @@ function NavigationBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
+          <Nav.Link href="./NavigationBar">Home</Nav.Link>
+          <Nav.Link href="./productCard">Link</Nav.Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -22,6 +22,8 @@ function NavigationBar() {
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-info">Search</Button>
+          <Nav.Link><i className="material-icons">shopping_cart</i></Nav.Link>
+
         </Form>
       </Navbar.Collapse>
     </Navbar>

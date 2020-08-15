@@ -1,40 +1,38 @@
 import React, { Component } from 'react';
 import { Jumbotron, CardDeck, Container } from 'react-bootstrap'
-import Products from '../assets/products'
 import ProductCard from './ProductCard'
 import NavigationBar from './NavigationBar'
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux';
+import { connect } from 'react-redux'
+import { fetchProducts } from '../actions/ProductActions'
+import PropTypes from 'prop-types'
 
-const store = createStore(() => [],{}, applyMiddleware());
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            products: Products
-        }
-    }
-    write() {
-        console.log(this.state.products)
-    }
     render() {
-        const items = this.state.products.map(product => (
+        const items = this.props.products.map(product => (
             <ProductCard key={product.Id} product={product}></ProductCard>
         ));
         return (
-            <Provider store = {store}>
-                <Container>
-                    <NavigationBar>
-                    </NavigationBar>
-                    <Jumbotron>
-                        <CardDeck style={{ display: 'flex', flexDirection: 'row', justifyContent: "true" }}>
-                            {items}
-                        </CardDeck>
-                    </Jumbotron>
-                </Container>
-            </Provider>
+            <Container>
+                <NavigationBar>
+                </NavigationBar>
+                <Jumbotron>
+                    <CardDeck style={{ display: 'flex', flexDirection: 'row', justifyContent: "true" }}>
+                        {items}
+                    </CardDeck>
+                </Jumbotron>
+            </Container>
         );
     }
 }
+Home.propTypes = {
+    products: PropTypes.array.isRequired,
+    product: PropTypes.object
+}
+const mapStateToProps = state => (
+    {
+        products: state.productReducer.products,
+        product: state.productReducer.product
+    }
+);
 
-export default Home;
+export default connect(mapStateToProps, fetchProducts)(Home);

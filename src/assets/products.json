@@ -30,5 +30,13 @@
         "AvailableSizes": ["xs", "s", "m", "l"],
         "ImageLink": "http://localhost:3000/images/polotshirt.jpg",
         "Description": "adfhsladfh aldkfhaei adnflakdfj"
+    },
+    {
+        "Id": 5,
+        "Name": "Polo TShirt",
+        "Type": "Short Sleeve",
+        "AvailableSizes": ["xs", "s", "m", "l"],
+        "ImageLink": "http://localhost:3000/images/polotshirt.jpg",
+        "Description": "adfhsladfh aldkfhaei adnflakdfj"
     }
 ]

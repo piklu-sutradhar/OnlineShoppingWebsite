@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron, CardDeck, Container } from 'react-bootstrap'
 import ProductCard from './ProductCard'
-import NavigationBar from './NavigationBar'
+//import NavigationBar from './NavigationBar'
 import { connect } from 'react-redux'
 import { fetchProducts } from '../actions/ProductActions'
 import PropTypes from 'prop-types'
@@ -13,8 +13,6 @@ class Home extends Component {
         ));
         return (
             <Container>
-                <NavigationBar>
-                </NavigationBar>
                 <Jumbotron>
                     <CardDeck style={{ display: 'flex', flexDirection: 'row', justifyContent: "true" }}>
                         {items}

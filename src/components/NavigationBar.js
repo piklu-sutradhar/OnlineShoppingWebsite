@@ -1,32 +1,28 @@
-import React from 'react';
-import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
 //import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 
-function NavigationBar() {
-  return (
-    <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
-      <Navbar.Brand href="#home">Hello Shoppers</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="./NavigationBar">Home</Nav.Link>
-          <Nav.Link href="./productCard">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
-          <Nav.Link><i className="material-icons">shopping_cart</i></Nav.Link>
-
-        </Form>
-      </Navbar.Collapse>
-    </Navbar>
-  )
+class NavigationBar extends Component {
+  render() {
+    return (
+      <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
+        <Navbar.Brand href="#home">Hello Shoppers</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/About">About</Nav.Link>
+            <Form inline>
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <Button variant="outline-info">Search</Button>
+            </Form>
+          </Nav>
+          <Nav.Link href="/Signup">Sign Up</Nav.Link>
+          <Nav.Link href="/Login">Login</Nav.Link>
+        </Navbar.Collapse>
+      </Navbar>
+    )
+  }
 }
 export default NavigationBar

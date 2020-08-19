@@ -7,9 +7,15 @@ import { fetchProducts } from '../actions/ProductActions'
 import PropTypes from 'prop-types'
 
 class Home extends Component {
+    componentDidMount() {
+        //console.log(this.props)
+        const { fetchProducts} = this.props;
+        fetchProducts();
+        //fetchCart();
+    }
     render() {
         const items = this.props.products.map(product => (
-            <ProductCard key={product.Id} product={product}></ProductCard>
+            <ProductCard key={product._id} product={product}></ProductCard>
         ));
         return (
             <Container>
@@ -23,14 +29,25 @@ class Home extends Component {
     }
 }
 Home.propTypes = {
+    fetchProducts: PropTypes.func,
     products: PropTypes.array.isRequired,
-    product: PropTypes.object
+    product: PropTypes.object,
+    itemCountInCart: PropTypes.number,
+    cart: PropTypes.array
 }
 const mapStateToProps = state => (
     {
+        itemCountInCart: state.productReducer.itemsCountInCart,
         products: state.productReducer.products,
-        product: state.productReducer.product
+        product: state.productReducer.product,
+        cart: state.productReducer.cart
     }
 );
 
-export default connect(mapStateToProps, fetchProducts)(Home);
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchProducts: () => dispatch(fetchProducts)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

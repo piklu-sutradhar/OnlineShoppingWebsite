@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import { Jumbotron, Container } from 'react-bootstrap';
+
+
 class Login extends Component{
     render(){
         return(
-            <div>
-                This is Login page
-            </div>
+            <Container>
+                <Jumbotron>
+                    Login page
+                </Jumbotron>
+            </Container>
         );
     }
 }

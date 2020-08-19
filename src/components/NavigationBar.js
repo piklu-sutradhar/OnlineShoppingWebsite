@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { BsFillBagFill } from 'react-icons/bs'
 //import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 //import {Link} from 'react-router-dom'
 
@@ -18,8 +19,12 @@ class NavigationBar extends Component {
               <Button variant="outline-info">Search</Button>
             </Form>
           </Nav>
-          <Nav.Link href="/Signup">Sign Up</Nav.Link>
-          <Nav.Link href="/Login">Login</Nav.Link>
+          <Nav className="mr-auton navbar-right">
+            <Nav.Link href="/Signup">Sign Up</Nav.Link>
+            <Nav.Link href="/Login">Login</Nav.Link>
+            <Nav.Link href="/Cart"><BsFillBagFill/></Nav.Link>
+          </Nav>
+
         </Navbar.Collapse>
       </Navbar>
     )

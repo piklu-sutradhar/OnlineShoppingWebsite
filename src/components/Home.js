@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, CardDeck, Container } from 'react-bootstrap'
+import { CardDeck, Jumbotron, Container } from 'react-bootstrap'
 import ProductCard from './ProductCard'
 //import NavigationBar from './NavigationBar'
 import { connect } from 'react-redux'
@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 class Home extends Component {
     componentDidMount() {
         //console.log(this.props)
-        const { fetchProducts} = this.props;
+        const { fetchProducts } = this.props;
         fetchProducts();
         //fetchCart();
     }
@@ -19,11 +19,11 @@ class Home extends Component {
         ));
         return (
             <Container>
-                <Jumbotron>
-                    <CardDeck style={{ display: 'flex', flexDirection: 'row', justifyContent: "true" }}>
-                        {items}
-                    </CardDeck>
-                </Jumbotron>
+            <Jumbotron>
+            <CardDeck style={{ display: 'flex', flexDirection: 'row', justifyContent: "true" }}>
+                {items}
+            </CardDeck>
+            </Jumbotron>
             </Container>
         );
     }

@@ -1,9 +1,9 @@
-import { FETCH_PRODUCTS, ADD_PRODUCT, ADD_TO_CART, FETCH_CART } from './Types';
+import { FETCH_PRODUCTS, ADD_PRODUCT, ADD_TO_CART, FETCH_CART, REMOVE_FROM_CART, CLEAR_CART } from './Types';
 //import Products from '../assets/products'
 
 
 export const fetchProducts = dispatch => {
-    console.log('go fetch products')
+    //console.log('go fetch products')
     fetch('http://127.0.0.1:5000/getproducts', { method: 'GET'})
     .then((response) => response.json())
     .then((data) => dispatch(
@@ -15,7 +15,7 @@ export const fetchProducts = dispatch => {
 };
 
 export const fetchCart = dispatch => {
-    console.log('go fetch cart')
+    //console.log('go fetch cart')
     fetch('http://127.0.0.1:5000/getcart', { method: 'GET'})
     .then((response) => response.json())
     .then((data) => dispatch(
@@ -50,10 +50,37 @@ export const addProductToCart = (product) => dispatch => {
             payload: product
         })
     );
-    // return dispatch(
-    //     {
-    //         type: ADD_TO_CART,
-    //         payload: product
-    //     }
-    // );
+};
+
+export const removeFromCart = (productID) => dispatch => {
+    let productToRemove = {"_id": productID};
+    //console.log("go remove the item")
+    fetch('http://127.0.0.1:5000/removefromcart', { 
+        method: 'DELETE',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(productToRemove)
+    })
+    .then((response) => response.json())
+    .then((data) => dispatch(
+        {
+            type: REMOVE_FROM_CART,
+            payload: data
+        })
+    );
+}
+
+export const clearCart = dispatch => {
+    //console.log("removing item from cart")
+    fetch('http://127.0.0.1:5000/clearcart', { 
+        method: 'DELETE'
+    })
+    .then((response) => response.json())
+    .then( (product) => dispatch(
+        {
+            type: CLEAR_CART,
+            payload: product
+        })
+    );
 }

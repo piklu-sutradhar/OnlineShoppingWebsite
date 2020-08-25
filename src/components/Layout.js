@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import NavigationBar from './NavigationBar'
 import { Container } from 'react-bootstrap'
 import Footer from './Footer'
 class Layout extends Component {
     render() {
         return (
-            <Container>
+            <React.Fragment>
                 <NavigationBar>
                 </NavigationBar>
                 <Container>
@@ -13,7 +13,7 @@ class Layout extends Component {
                 </Container>
                 <Footer>
                 </Footer>
-            </Container>
+            </React.Fragment>
         );
     }
 }

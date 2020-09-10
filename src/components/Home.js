@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { CardDeck, Jumbotron, Container } from 'react-bootstrap'
+//import { CardDeck, Jumbotron, Container } from 'react-bootstrap'
+import { Grid } from '@material-ui/core'
 import ProductCard from './ProductCard'
 //import NavigationBar from './NavigationBar'
 import { connect } from 'react-redux'
@@ -14,17 +15,22 @@ class Home extends Component {
         //fetchCart();
     }
     render() {
-        const items = this.props.products.map(product => (
-            <ProductCard key={product._id} product={product}></ProductCard>
-        ));
+        // const items = 
+        // ));
         return (
-            <Container>
-            <Jumbotron>
-            <CardDeck style={{ display: 'flex', flexDirection: 'row', justifyContent: "true" }}>
-                {items}
-            </CardDeck>
-            </Jumbotron>
-            </Container>
+            <Grid container spacing={2} className='mb-3'>
+                {this.props.products.map(product => (
+                    <Grid item xs={12} sm={4} md={3}>
+                        <ProductCard key={product._id} product={product}></ProductCard>
+                    </Grid>))}
+            </Grid>
+            // <Container>
+            // <Jumbotron>
+            // <CardDeck style={{ display: 'flex', flexDirection: 'row', justifyContent: "true" }}>
+            //     {items}
+            // </CardDeck>
+            // </Jumbotron>
+            // </Container>
         );
     }
 }

@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import { Card, Button } from "react-bootstrap";
-// import { addProductToCart } from '../actions/ProductActions'
 import { connect } from 'react-redux'
 import { addProductToCart } from '../actions/ProductActions';
+import './ProductCard.css'
+//import { makeStyles } from '@material-ui/core';
 //import PropTypes from 'prop-types'
+const styles = {
+    color: 'black'
+}
+// const useStyles = makeStyles(
+//     {
 
+//     }
+// )
 class ProductCard extends Component {
     // constructor(props){
     //     super(props)
     // } 
     render() {
         return (
-            <Card className="shadow-box-example hoverable" style={{ width: '4em' }}>                    
+            <Card className="productCard" style={styles}>                    
                 <Card.Img variant="top" src={require('../images/polotshirt.jpg')} />
                 <Card.Body>
                     <Card.Title>{this.props.product.Name}</Card.Title>
@@ -21,7 +29,7 @@ class ProductCard extends Component {
                     <Card.Text>
                         {this.props.product.Description}
                     </Card.Text>
-                    <Button variant="primary" onClick={() => this.props.addProductToCart(this.props.product)}>Buy</Button>
+                    <Button className="btn-lg btn-drk btn-block" variant="primary" onClick={() => this.props.addProductToCart(this.props.product)}>Add to Cart</Button>
                 </Card.Body>
             </Card>
         );

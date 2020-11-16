@@ -13,6 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { FacebookLoginButton } from 'react-social-login-buttons';
 
 // function Copyright() {
 //   return (
@@ -124,6 +125,10 @@ export default function SignUp() {
           >
             Sign Up
           </Button>
+          <div className="text-center pt-3">
+          Or continue with social account
+        </div>
+        <FacebookLoginButton className="mt-3 mb-3" />
           <Grid container justify="flex-end">
             <Grid item>
               <Link href="/Login" variant="body2">
@@ -132,6 +137,7 @@ export default function SignUp() {
             </Grid>
           </Grid>
         </form>
+        
       </div>
     </Container>
   );

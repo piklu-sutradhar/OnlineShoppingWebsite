@@ -20,7 +20,7 @@ class Home extends Component {
         return (
             <Grid container spacing={2} className='mb-3'>
                 {this.props.products.map(product => (
-                    <Grid item xs={12} sm={4} md={3}>
+                    <Grid key={product._id} item xs={12} sm={4} md={3}>
                         <ProductCard key={product._id} product={product}></ProductCard>
                     </Grid>))}
             </Grid>

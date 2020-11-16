@@ -10,7 +10,7 @@ const initialState = {
 export default function(state = initialState, action) {
     switch (action.type) {
         case FETCH_PRODUCTS:
-            console.log(action.payload)
+            // console.log(action.payload)
             return {
                 ...state,
                 products: action.payload
@@ -45,7 +45,7 @@ export default function(state = initialState, action) {
                 itemsCountInCart: 0
             }
         case REMOVE_FROM_CART:
-            console.log(action.payload)
+            // console.log(action.payload)
             return {
                 ...state,
                 cart: action.payload

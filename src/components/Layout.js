@@ -3,9 +3,9 @@ import NavigationBar from './NavigationBar'
 import { Container } from 'react-bootstrap'
 import Footer from './Footer'
 
-const styles = {
-    backgroundColor: 'black'
-}
+// const styles = {
+//     backgroundColor: 'black'
+// }
 
 
 class Layout extends Component {

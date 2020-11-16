@@ -5,6 +5,21 @@ import { fetchCart } from '../actions/ProductActions';
 import { connect } from 'react-redux';
 //import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 //import {Link} from 'react-router-dom'
+// import Badge from '@material-ui/core/Badge';
+// import { withStyles } from '@material-ui/core/styles';
+// import IconButton from '@material-ui/core/IconButton';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+// import { grey } from '@material-ui/core/colors';
+
+// const StyledBadge = withStyles((theme) => ({
+//   badge: {
+//     right: -3,
+//     color: grey,
+//     top: 13,
+//     border: `2px solid ${theme.palette.background.paper}`,
+//     padding: '0 4px',
+//   },
+// }))(Badge);
 
 class NavigationBar extends Component {
   componentDidMount() {
@@ -29,6 +44,11 @@ class NavigationBar extends Component {
           <Nav className="mr-auton navbar-right">
             <Nav.Link href="/Signup">Sign Up</Nav.Link>
             <Nav.Link href="/Login">Login</Nav.Link>
+            {/* <IconButton aria-label="cart" color={grey}>
+              <StyledBadge badgeContent={4} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton> */}
             <Nav.Link href="/Cart"><BsFillBagFill /><span>{this.props.cart.length}</span></Nav.Link>
           </Nav>
 
